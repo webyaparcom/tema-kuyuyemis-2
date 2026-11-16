@@ -1,0 +1,40 @@
+{
+  "id": "9mqyivvpji",
+  "name": {
+    "tr": "Yorumlar",
+    "en": "Reviews",
+    "ar": "التقييمات"
+  },
+  "description": {
+    "tr": "Kriter puanlı müşteri yorumları (kurgusal).",
+    "en": "Customer reviews scored by criteria (fictional).",
+    "ar": "تقييمات عملاء حسب المعايير (افتراضية)."
+  },
+  "keyword": {
+    "tr": "referans, müşteri yorumu",
+    "en": "reference, review",
+    "ar": "مرجع، تقييم"
+  },
+  "path": "referanslar",
+  "icon": "stars",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "uplap4",
+      "8ir5g3"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Yorumlar",
+    "en": "Reviews",
+    "ar": "التقييمات"
+  },
+  "date": "2026-11-16T18:07:47.813Z",
+  "update": "2026-11-16T18:11:50.298Z"
+}

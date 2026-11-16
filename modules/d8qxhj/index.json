@@ -1,0 +1,52 @@
+{
+  "name": "Üst Seçici — dar ekranda bulunulan sayfayı gösteren seçim kutusu",
+  "description": "Geniş ekranda logo, ince ayraçlarla bölünmüş menü (etkin ve üzerine gelinen sayfanın önünde vurgu üçgeni), dil ve düğme. Dar ekranda hamburger yerine geniş bir seçim kutusu: üstte küçük «Sayfalar», altında bulunulan sayfanın adı ve dönen ok; dokununca sayfa listesi açılır, bulunulan sayfa onay işaretli. Menü düğmesi soyut üç çizgi değil, bulunulan yeri söyleyen bir seçici (form seçim kutusu dili): kullanıcı hem nerede olduğunu görür hem tek dokunuşla başka sayfaya geçer. Sayfalar site sayfalarından, dil seçici {{langbar}}, logo {{logo}}. Mobil menü erişilebilir (aria-expanded, Esc, odak). Renkler desing + var(--mx-site-*); mantıksal CSS → RTL.",
+  "version": "1.0.0",
+  "icon": "arrow_drop_down_circle",
+  "category": "menu",
+  "subCategory": "current-page-select",
+  "tags": [
+    "menu",
+    "select",
+    "current-page",
+    "disclosure",
+    "mobile",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "0px",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "tel": "",
+    "logoimg": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "logoH": "44px",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "name": "ek bağlantı adı (dil sözlüğü)",
+      "url": "iç yol ya da dış adres (dış adres yeni sekmede)"
+    }
+  }
+}

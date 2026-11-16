@@ -1,0 +1,101 @@
+<footer class="modulex-alt-pano-pin{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-alt-pano-pin-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</footer>
+
+<style>
+  /* alt-pano-pin — Bilgi bir duyuru panosuna asılmış notlar: üst üste binmeyen, raptiye/bantla tutturulmuş kâğıtlar ve çerçeveli mantar doku (kart destesinin bindirmesinden farklı olarak serbest pano düzeni) — çocuk, okul, oyun kafe, astroloji gibi sıcak/samimi markalar için. */
+  .modulex-alt-pano-pin { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-alt-pano-pin *, .modulex-alt-pano-pin *::before, .modulex-alt-pano-pin *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-alt-pano-pin :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-alt-pano-pin :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-alt-pano-pin :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-alt-pano-pin :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-alt-pano-pin img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-alt-pano-pin) img { height: auto; }
+  .modulex-alt-pano-pin [hidden] { display: none !important; }
+  .modulex-alt-pano-pin :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-alt-pano-pin :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-alt-pano-pin-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-alt-pano-pin-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-alt-pano-pin--bassiz .modulex-alt-pano-pin-bas { display: none; }
+  .modulex-alt-pano-pin-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-alt-pano-pin-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-alt-pano-pin-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-alt-pano-pin-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-alt-pano-pin-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-alt-pano-pin-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-pano-pin-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-alt-pano-pin-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-alt-pano-pin-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-alt-pano-pin-bag { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-alt-pano-pin-bag:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-alt-pano-pin-bag[aria-current="page"] { color: --accentInk--; font-weight: 700; }
+  .modulex-alt-pano-pin-logo { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+  .modulex-alt-pano-pin-logo img { width: auto; max-height: --logoH--; }
+  .modulex-alt-pano-pin-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-alt-pano-pin-bbaslik { margin-block-end: 14px; color: --accentInk--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-alt-pano-pin-sayfalar, .modulex-alt-pano-pin-baglantilar, .modulex-alt-pano-pin-iletisim, .modulex-alt-pano-pin-yasal { display: grid; gap: 9px; }
+  .modulex-alt-pano-pin-il { display: flex; align-items: flex-start; gap: 10px; }
+  .modulex-alt-pano-pin-il-ic { display: grid; gap: 2px; }
+  .modulex-alt-pano-pin-il-etiket { color: --muted--; font-size: 0.8rem; }
+  .modulex-alt-pano-pin-il-ikon { flex: none; color: --accentInk--; font-size: 20px; }
+  .modulex-alt-pano-pin-saatler { display: grid; gap: 6px; }
+  .modulex-alt-pano-pin-saat { display: flex; justify-content: space-between; gap: 16px; }
+  .modulex-alt-pano-pin-saat dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .modulex-alt-pano-pin-sosyal { display: flex; flex-wrap: wrap; gap: 10px; }
+  .modulex-alt-pano-pin-sosyal-a { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid --cizgi--; border-radius: 50%; color: inherit; font-size: 18px; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .modulex-alt-pano-pin-sosyal-a:hover { border-color: --accent--; background: --accent--; color: --accentText--; transform: translateY(-2px); }
+  .modulex-alt-pano-pin-hakkinda { max-width: 46ch; color: --muted--; }
+  .modulex-alt-pano-pin-telif { display: flex; flex-wrap: wrap; gap: 4px 14px; color: --muted--; font-size: 0.9rem; }
+  .modulex-alt-pano-pin-dil:empty { display: none; }
+  .modulex-alt-pano-pin-yukari { display: inline-grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; background: --accent--; color: --accentText--; text-decoration: none; transition: transform 0.25s ease; }
+  .modulex-alt-pano-pin-yukari:hover { transform: translateY(-3px); }
+  .modulex-alt-pano-pin-bulten { display: grid; gap: 8px; }
+  .modulex-alt-pano-pin-nl-etiket { font-size: 0.9rem; font-weight: 700; }
+  .modulex-alt-pano-pin-nl-satir { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-alt-pano-pin-nl-girdi { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 10px 18px; border: 1px solid --cizgi--; border-radius: 999px; background: --bg--; color: --text--; font: inherit; }
+  .modulex-alt-pano-pin-nl-dugme { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: 999px; background: --accent--; color: --accentText--; font: inherit; font-weight: 700; transition: transform 0.2s ease; }
+  .modulex-alt-pano-pin-nl-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-pano-pin-nl-dugme .material-symbols-outlined { font-size: 18px; }
+  .modulex-alt-pano-pin-nl-durum:empty { display: none; }
+  .modulex-alt-pano-pin-nl-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .modulex-alt-pano-pin-nl-metin { color: --muted--; }
+
+  .modulex-alt-pano-pin-pp-pano { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 34px 28px; padding: clamp(28px, 4vw, 48px) clamp(16px, 3vw, 40px); border: 12px solid color-mix(in srgb, --text-- 62%, --accent--); border-radius: 10px; background-color: color-mix(in srgb, --accent-- 10%, --kartBg--); background-image: radial-gradient(color-mix(in srgb, --text-- 12%, transparent) 1px, transparent 1.6px), radial-gradient(color-mix(in srgb, --text-- 8%, transparent) 1px, transparent 1.6px); background-size: 14px 14px, 22px 22px; background-position: 0 0, 7px 11px; box-shadow: inset 0 0 0 1px color-mix(in srgb, --text-- 20%, transparent), 0 24px 40px -32px color-mix(in srgb, --text-- 70%, transparent); }
+  .modulex-alt-pano-pin-pp-not { --pp-aci: -2deg; position: relative; display: grid; align-content: start; gap: 12px; flex: 1 1 220px; max-width: 320px; min-width: 0; padding: 30px 22px 24px; background: --bg--; box-shadow: 0 12px 20px -14px color-mix(in srgb, --text-- 60%, transparent); transform: rotate(var(--pp-aci)); transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease; }
+  .modulex-alt-pano-pin-pp-not:nth-child(3n+2) { --pp-aci: 1.6deg; background: color-mix(in srgb, --accent-- 12%, --bg--); }
+  .modulex-alt-pano-pin-pp-not:nth-child(3n) { --pp-aci: -0.8deg; background: color-mix(in srgb, --text-- 5%, --bg--); }
+  .modulex-alt-pano-pin-pp-not--marka { flex-basis: 300px; max-width: 380px; }
+  .modulex-alt-pano-pin-pp-not--il { flex-basis: 260px; max-width: 360px; }
+  .modulex-alt-pano-pin-pp-not::before { content: ""; position: absolute; inset-block-start: -9px; inset-inline: 0; width: 20px; height: 20px; margin-inline: auto; border-radius: 50%; background: radial-gradient(circle at 35% 35%, color-mix(in srgb, --bg-- 70%, --accent--) 0 18%, --accent-- 22% 60%, color-mix(in srgb, --accent-- 60%, --text--) 100%); box-shadow: 0 4px 6px -2px color-mix(in srgb, --text-- 60%, transparent); transition: transform 0.35s ease; }
+  .modulex-alt-pano-pin-pp-not:nth-child(3n)::before { inset-block-start: -12px; width: 84px; height: 24px; border-radius: 2px; background: color-mix(in srgb, --bg-- 55%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, --text-- 10%, transparent); transform: rotate(-3deg); }
+  .modulex-alt-pano-pin-pp-not:is(:hover, :focus-within) { z-index: 1; transform: rotate(0deg) translateY(-6px); box-shadow: 0 22px 30px -18px color-mix(in srgb, --text-- 60%, transparent); }
+  .modulex-alt-pano-pin-pp-not:not(:nth-child(3n)):hover::before { transform: scale(1.15); }
+  .modulex-alt-pano-pin-pp-baslik { color: --accentInk--; font-family: var(--mx-font-heading, inherit); font-size: 1.15rem; font-weight: 800; }
+  .modulex-alt-pano-pin-pp-dip { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-block-start: 24px; }
+  .modulex-alt-pano-pin-pp-dip .modulex-alt-pano-pin-telif { margin-inline-end: auto; }
+  .modulex-alt-pano-pin-pp-yasal { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.9rem; }
+  @media (max-width: 768px) {
+    .modulex-alt-pano-pin-pp-pano { gap: 30px; border-width: 8px; }
+    .modulex-alt-pano-pin-pp-not, .modulex-alt-pano-pin-pp-not--marka, .modulex-alt-pano-pin-pp-not--il { flex-basis: 100%; max-width: none; }
+    .modulex-alt-pano-pin-pp-not { --pp-aci: -0.6deg; }
+    .modulex-alt-pano-pin-pp-not:nth-child(3n+2) { --pp-aci: 0.6deg; }
+    .modulex-alt-pano-pin-pp-not:nth-child(3n) { --pp-aci: 0deg; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-pano-pin :is(.modulex-alt-pano-pin-baslik, .modulex-alt-pano-pin-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-pano-pin-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-alt-pano-pin { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-alt-pano-pin *, .modulex-alt-pano-pin *::before, .modulex-alt-pano-pin *::after { animation: none !important; transition: none !important; }
+  }
+</style>

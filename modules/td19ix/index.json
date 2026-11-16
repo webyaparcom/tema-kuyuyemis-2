@@ -1,0 +1,69 @@
+{
+  "name": "Kuruyemiş Terazi — kavanoz raf ızgarası ve kadranlı tartı paneli",
+  "description": "Solda kavanoz kapaklı ürün karoları (ikon, ad, köken, kg fiyatı, rozet) radyo olarak seçilir; sağda yapışkan tartı paneli: yarım daire kadran ve yaylanan ibre, seçili ürün, gram ve canlı tutar, gram sürgüsü ve hazır gram çipleri (100 · 250 · 500 · 1000). Kayıt alanları: `fiyat` (kg), `rozet`. JS yokken tartı gizli; her karoda ilk üç gramın hazır fiyatı yazılı. kargo-desi-hesap'ın ölçü formu + matris tablosundan ve menu-sekmeli-fiyat'ın adetli özetinden farkı: ağırlık (gram) temelli fiyat — kadranlı, ibreli tartı görseli ve sürgü; ürünler satır değil kapaklı kavanoz karoları (radyo seçimi); module ailesinde kadran/ibre iskeleti yok. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Başlık ve metin yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "scale",
+  "category": "module",
+  "subCategory": "scale-dial",
+  "tags": [
+    "module",
+    "weight",
+    "calculator",
+    "dial",
+    "product-grid",
+    "interactive",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "img": "",
+    "img2": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "cta2_ad": "",
+    "cta2_url": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "paraBirimi": "",
+    "gramlar": [
+      100,
+      250,
+      500,
+      1000
+    ],
+    "birimAd": "",
+    "kgAd": "",
+    "urunAd": "",
+    "gramAd": "",
+    "sonucAd": "",
+    "tartiNot": "",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data",
+    "alanlar": {
+      "ikon": "madde ikonu (Material Symbols)",
+      "baslik": "madde başlığı (dil sözlüğü, zorunlu)",
+      "metin": "madde metni (dil sözlüğü)",
+      "url": "madde bağlantısı"
+    }
+  }
+}

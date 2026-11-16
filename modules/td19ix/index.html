@@ -1,0 +1,153 @@
+<section class="modulex-kuruyemis-terazi{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-kuruyemis-terazi-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* kuruyemis-terazi — kargo-desi-hesap'ın ölçü formu + matris tablosundan ve menu-sekmeli-fiyat'ın adetli özetinden farkı: ağırlık (gram) temelli fiyat — kadranlı, ibreli tartı görseli ve sürgü; ürünler satır değil kapaklı kavanoz karoları (radyo seçimi); module ailesinde kadran/ibre iskeleti yok. */
+  .modulex-kuruyemis-terazi { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-kuruyemis-terazi *, .modulex-kuruyemis-terazi *::before, .modulex-kuruyemis-terazi *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-kuruyemis-terazi :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-kuruyemis-terazi :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-kuruyemis-terazi :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-kuruyemis-terazi :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-kuruyemis-terazi img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-kuruyemis-terazi) img { height: auto; }
+  .modulex-kuruyemis-terazi [hidden] { display: none !important; }
+  .modulex-kuruyemis-terazi :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-kuruyemis-terazi :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-kuruyemis-terazi-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-kuruyemis-terazi-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-kuruyemis-terazi--bassiz .modulex-kuruyemis-terazi-bas { display: none; }
+  .modulex-kuruyemis-terazi-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-kuruyemis-terazi-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-kuruyemis-terazi-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-kuruyemis-terazi-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-kuruyemis-terazi-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-kuruyemis-terazi-dugme:hover { transform: translateY(-2px); }
+  .modulex-kuruyemis-terazi-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-kuruyemis-terazi-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-kuruyemis-terazi-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-kuruyemis-terazi-giris { display: grid; gap: 14px; max-width: 720px; margin-block-end: clamp(28px, 4vw, 44px); }
+  .modulex-kuruyemis-terazi-dukkan { display: grid; gap: clamp(22px, 3vw, 40px); align-items: start; }
+  .modulex-kuruyemis-terazi--js .modulex-kuruyemis-terazi-dukkan { grid-template-columns: minmax(0, 1fr) minmax(260px, 330px); }
+  .modulex-kuruyemis-terazi-raf { min-width: 0; margin: 0; padding: 0; border: 0; }
+  .modulex-kuruyemis-terazi-gizli { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .modulex-kuruyemis-terazi-kavanozlar { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 16px; }
+  .modulex-kuruyemis-terazi-kavanoz { display: grid; }
+  .modulex-kuruyemis-terazi-ketiket { position: relative; display: grid; justify-items: center; align-content: start; gap: 6px; padding: 34px 14px 18px; border: 2px solid --cizgi--; border-radius: 22px 22px --yuvarlak-- --yuvarlak--; background: --kartBg--; text-align: center; transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease; }
+  label.modulex-kuruyemis-terazi-ketiket { cursor: pointer; }
+  label.modulex-kuruyemis-terazi-ketiket:hover { transform: translateY(-3px); border-color: --accent--; }
+  .modulex-kuruyemis-terazi-ketiket:has(.modulex-kuruyemis-terazi-kradyo:checked) { border-color: --accent--; box-shadow: 0 0 0 3px color-mix(in srgb, --accent-- 30%, transparent), 0 18px 30px -24px color-mix(in srgb, --text-- 70%, transparent); }
+  .modulex-kuruyemis-terazi-ketiket:has(.modulex-kuruyemis-terazi-kradyo:focus-visible) { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-kuruyemis-terazi-kradyo { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; }
+  .modulex-kuruyemis-terazi-kapak { position: absolute; inset-block-start: -10px; inset-inline: 22%; height: 18px; border-radius: 8px 8px 4px 4px; background: --accent--; box-shadow: inset 0 -4px 0 color-mix(in srgb, --text-- 18%, transparent); transition: transform 0.3s ease; }
+  .modulex-kuruyemis-terazi-ketiket:has(.modulex-kuruyemis-terazi-kradyo:checked) .modulex-kuruyemis-terazi-kapak { transform: translateY(-5px) rotate(-6deg); }
+  .modulex-kuruyemis-terazi-kikon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: color-mix(in srgb, --accent-- 14%, transparent); color: --accentInk--; font-size: 28px; }
+  .modulex-kuruyemis-terazi-kad { font-size: 1.02rem; font-weight: 750; }
+  .modulex-kuruyemis-terazi-kkoken { color: --muted--; font-size: 0.8rem; }
+  .modulex-kuruyemis-terazi-kfiyat { color: --accentInk--; font-size: 1.1rem; font-weight: 850; font-variant-numeric: tabular-nums; }
+  .modulex-kuruyemis-terazi-kfiyat small { color: --muted--; font-size: 0.75rem; font-weight: 600; }
+  .modulex-kuruyemis-terazi-khazir { display: grid; gap: 2px; width: 100%; padding-block-start: 8px; border-block-start: 1px dashed --cizgi--; font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+  .modulex-kuruyemis-terazi-khazir > span { display: flex; justify-content: space-between; gap: 8px; }
+  .modulex-kuruyemis-terazi--js .modulex-kuruyemis-terazi-khazir { display: none; }
+  .modulex-kuruyemis-terazi-krozet { position: absolute; inset-block-start: 14px; inset-inline-end: 10px; padding: 2px 8px; border-radius: 999px; background: --text--; color: --bg--; font-size: 0.66rem; font-weight: 800; }
+  .modulex-kuruyemis-terazi-terazi { position: sticky; inset-block-start: 96px; display: grid; justify-items: center; gap: 6px; padding: 26px 22px; border-radius: calc(--yuvarlak-- * 1.2); background: --bg--; box-shadow: 0 30px 60px -44px color-mix(in srgb, --text-- 80%, transparent); text-align: center; }
+  .modulex-kuruyemis-terazi-kadran { position: relative; width: min(100%, 230px); aspect-ratio: 2 / 1; overflow: hidden; border-radius: 230px 230px 0 0; background: conic-gradient(from -90deg at 50% 100%, color-mix(in srgb, --accent-- 25%, transparent), --accent-- 180deg, transparent 180deg); }
+  .modulex-kuruyemis-terazi-kadran::before { content: ""; position: absolute; inset: 0; background: repeating-conic-gradient(from -90deg at 50% 100%, color-mix(in srgb, --text-- 70%, transparent) 0deg 1deg, transparent 1deg 15deg); -webkit-mask: radial-gradient(circle farthest-side at 50% 100%, transparent 84%, black 85%); mask: radial-gradient(circle farthest-side at 50% 100%, transparent 84%, black 85%); }
+  .modulex-kuruyemis-terazi-kadran::after { content: ""; position: absolute; inset-block-end: 0; left: 50%; width: 62%; aspect-ratio: 1; border-radius: 50%; background: --bg--; translate: -50% 50%; }
+  .modulex-kuruyemis-terazi-ibre { position: absolute; z-index: 1; inset-block-end: 0; left: 50%; width: 4px; height: 82%; border-radius: 4px; background: --text--; translate: -50% 0; transform-origin: 50% 100%; rotate: var(--fb-aci, -90deg); transition: rotate 0.7s cubic-bezier(0.3, 1.5, 0.5, 1); }
+  .modulex-kuruyemis-terazi-gobek { position: absolute; z-index: 2; inset-block-end: -11px; left: 50%; width: 22px; height: 22px; border-radius: 50%; background: --accent--; translate: -50% 0; }
+  .modulex-kuruyemis-terazi-tad { margin-block-start: 10px; font-size: 1.05rem; font-weight: 750; }
+  .modulex-kuruyemis-terazi-tgram { color: --muted--; font-variant-numeric: tabular-nums; }
+  .modulex-kuruyemis-terazi-tset { margin-block-start: 8px; color: --muted--; font-size: 0.74rem; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-kuruyemis-terazi-ttutar { color: --accentInk--; font-size: clamp(1.9rem, 3.4vw, 2.5rem); font-weight: 850; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .modulex-kuruyemis-terazi-ttutar.modulex-kuruyemis-terazi--tik { animation: modulex-kuruyemis-terazi-tik 0.4s ease; }
+  .modulex-kuruyemis-terazi-sur { width: 100%; margin-block-start: 6px; }
+  .modulex-kuruyemis-terazi-surgu { width: 100%; accent-color: --accent--; cursor: pointer; }
+  .modulex-kuruyemis-terazi-gcipler { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .modulex-kuruyemis-terazi-gcip { position: relative; cursor: pointer; }
+  .modulex-kuruyemis-terazi-gcip span { display: inline-block; padding: 6px 12px; border: 1.5px solid --cizgi--; border-radius: 999px; font-size: 0.82rem; font-weight: 700; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+  .modulex-kuruyemis-terazi-gradyo { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; }
+  .modulex-kuruyemis-terazi-gradyo:checked + span { border-color: --text--; background-color: --text--; color: --bg--; }
+  .modulex-kuruyemis-terazi-gradyo:focus-visible + span { outline: 3px solid --accent--; outline-offset: 2px; }
+  .modulex-kuruyemis-terazi-tnot { margin-block-start: 8px; color: --muted--; font-size: 0.78rem; }
+  .modulex-kuruyemis-terazi-dukkan + .modulex-kuruyemis-terazi-cta { margin-block-start: 28px; }
+  @keyframes modulex-kuruyemis-terazi-tik { from { opacity: 0.4; transform: scale(0.94); } to { opacity: 1; transform: none; } }
+  @media (max-width: 1024px) {
+    .modulex-kuruyemis-terazi--js .modulex-kuruyemis-terazi-dukkan { grid-template-columns: minmax(0, 1fr); }
+    .modulex-kuruyemis-terazi-terazi { position: static; order: -1; }
+  }
+  @media (max-width: 768px) {
+    .modulex-kuruyemis-terazi-kavanozlar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .modulex-kuruyemis-terazi-ketiket { padding: 30px 10px 14px; }
+    .modulex-kuruyemis-terazi-krozet { position: static; }
+  }
+  .modulex-kuruyemis-terazi-bag { color: inherit; text-decoration: none; }
+  .modulex-kuruyemis-terazi-bag:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-kuruyemis-terazi-mbaslik { font-size: 1.05rem; font-weight: 700; }
+  .modulex-kuruyemis-terazi-mmetin { color: --muted--; font-size: 0.95rem; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-kuruyemis-terazi :is(.modulex-kuruyemis-terazi-baslik, .modulex-kuruyemis-terazi-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-kuruyemis-terazi-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-kuruyemis-terazi { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-kuruyemis-terazi *, .modulex-kuruyemis-terazi *::before, .modulex-kuruyemis-terazi *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-kuruyemis-terazi";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const teraziTart = (s, P) => {
+        const f = s.querySelector("[data-terazi]");
+        const gr = s.querySelector("[data-gram]");
+        if (!f || !gr) return;
+        s.classList.add(P + "--js");
+        const pan = s.querySelector("[data-tpanel]");
+        if (pan) pan.hidden = false;
+        const dl = document.documentElement.lang || undefined;
+        const pb = f.dataset.para || "";
+        const bic = (n) => { try { return new Intl.NumberFormat(dl, pb ? { style: "currency", currency: pb, maximumFractionDigits: 2 } : { maximumFractionDigits: 2 }).format(n); } catch (x) { return String(Math.round(n * 100) / 100); } };
+        const say = (n) => { try { return new Intl.NumberFormat(dl).format(n); } catch (x) { return String(n); } };
+        const ad = s.querySelector("[data-tad]");
+        const gm = s.querySelector("[data-tgram]");
+        const tt = s.querySelector("[data-ttutar]");
+        const ibre = s.querySelector("[data-ibre]");
+        const enc = Number(gr.max) || 1000;
+        const ciz = () => {
+          const u = f.querySelector("input[name=urun]:checked");
+          const g = Number(gr.value) || 0;
+          f.querySelectorAll("[data-gcip]").forEach((c) => { c.checked = Number(c.value) === g; });
+          if (ad) ad.textContent = u ? u.dataset.ad || "" : "";
+          if (gm) gm.textContent = say(g) + " " + (f.dataset.birim || "");
+          if (tt) {
+            tt.textContent = u ? bic((Number(u.dataset.kg) * g) / 1000) : "—";
+            tt.classList.remove(P + "--tik");
+            void tt.offsetWidth;
+            tt.classList.add(P + "--tik");
+          }
+          if (ibre) ibre.style.setProperty("--fb-aci", ((Math.min(g, enc) / enc) * 180 - 90).toFixed(1) + "deg");
+        };
+        f.addEventListener("input", (e) => {
+          if (e.target && e.target.dataset && e.target.dataset.gcip !== undefined) gr.value = e.target.value;
+          ciz();
+        });
+        f.addEventListener("submit", (e) => e.preventDefault());
+        ciz();
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      teraziTart(s, P, az);
+    });
+  })();
+</script>

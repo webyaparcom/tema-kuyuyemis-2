@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "id": "f8m4hhjd34",
+      "name": {
+        "tr": "Ürünler",
+        "en": "Products",
+        "ar": "المنتجات"
+      },
+      "description": {
+        "tr": "Kavanoz rafı, gram tartısı ve PDF fiyat listesi (kurgusal).",
+        "en": "The jar shelf, gram scale and PDF price list (fictional).",
+        "ar": "رف المرطبانات وميزان الغرام وقائمة أسعار PDF (افتراضية)."
+      },
+      "path": "hizmetler",
+      "icon": "kitchen",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "td19ix",
+          "8ir5g3"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Köken",
+        "en": "Origin",
+        "ar": "المنشأ"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "s1pa1t",
+          "mbpm79"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Dükkânın künyesi ve raftaki yöreler.",
+        "en": "The shop in numbers and the regions on the shelf.",
+        "ar": "المتجر بالأرقام والمناطق على الرف."
+      }
+    },
+    {
+      "id": "9mqyivvpji",
+      "name": {
+        "tr": "Yorumlar",
+        "en": "Reviews",
+        "ar": "التقييمات"
+      },
+      "description": {
+        "tr": "Kriter puanlı müşteri yorumları (kurgusal).",
+        "en": "Customer reviews scored by criteria (fictional).",
+        "ar": "تقييمات عملاء حسب المعايير (افتراضية)."
+      },
+      "path": "referanslar",
+      "icon": "stars",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "uplap4",
+          "8ir5g3"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "name": {
+        "tr": "İletişim",
+        "en": "Contact",
+        "ar": "اتصل بنا"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "",
+      "url": "",
+      "index": 3,
+      "icon": "call",
+      "desing": {
+        "header": [],
+        "body": [
+          "ridfe0",
+          "k8mp01"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Adres, telefon ve çalışma saatleri.",
+        "en": "Address, phone and opening hours.",
+        "ar": "العنوان والهاتف وساعات العمل."
+      }
+    }
+  ],
+  "desc": []
+}

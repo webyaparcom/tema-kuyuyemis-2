@@ -1,0 +1,108 @@
+<section class="modulex-yorum-kriter-puan{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-yorum-kriter-puan-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* yorum-kriter-puan — Çok boyutlu değerlendirme: yorum-puan-dagilim tüm yorumların yıldızını tek özette toplar, burada her yorum kendi kriter kırılımını (dl tablosu) taşır; yıldız sırası yerine halka gösterge (conic-gradient) ve yatay çubuklar. */
+  .modulex-yorum-kriter-puan { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-yorum-kriter-puan *, .modulex-yorum-kriter-puan *::before, .modulex-yorum-kriter-puan *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-yorum-kriter-puan :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-yorum-kriter-puan :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-yorum-kriter-puan :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-yorum-kriter-puan :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-yorum-kriter-puan img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-yorum-kriter-puan) img { height: auto; }
+  .modulex-yorum-kriter-puan [hidden] { display: none !important; }
+  .modulex-yorum-kriter-puan :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-yorum-kriter-puan :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-yorum-kriter-puan-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-yorum-kriter-puan-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-yorum-kriter-puan--bassiz .modulex-yorum-kriter-puan-bas { display: none; }
+  .modulex-yorum-kriter-puan-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-yorum-kriter-puan-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-yorum-kriter-puan-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-yorum-kriter-puan-bas { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px 48px; align-items: end; }
+  .modulex-yorum-kriter-puan-ust { grid-column: 1 / -1; }
+  .modulex-yorum-kriter-puan-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-yorum-kriter-puan-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-yorum-kriter-puan-dugme:hover { transform: translateY(-2px); }
+  .modulex-yorum-kriter-puan-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-yorum-kriter-puan-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-yorum-kriter-puan-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-yorum-kriter-puan-ad { font-weight: 700; }
+  .modulex-yorum-kriter-puan-kisi { display: grid; gap: 2px; min-width: 0; }
+  .modulex-yorum-kriter-puan-unvan { color: --muted--; font-size: 0.88rem; line-height: 1.45; }
+  .modulex-yorum-kriter-puan-puan { display: flex; gap: 2px; color: --yildiz--; }
+  .modulex-yorum-kriter-puan-puan .material-symbols-outlined { font-size: 20px; font-variation-settings: "FILL" 1; }
+  .modulex-yorum-kriter-puan-yildiz--bos { opacity: 0.3; }
+  .modulex-yorum-kriter-puan-avatar { flex: none; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .modulex-yorum-kriter-puan-harf { display: inline-grid; place-items: center; background: color-mix(in srgb, --accent-- 18%, --kartBg--); color: --accentInk--; font-weight: 800; letter-spacing: 0.02em; }
+  .modulex-yorum-kriter-puan-yazar { display: flex; align-items: center; gap: 12px; }
+
+  .modulex-yorum-kriter-puan-izgara { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 22px; align-items: start; }
+  .modulex-yorum-kriter-puan-kart { position: relative; display: grid; gap: 18px; overflow: hidden; padding: clamp(22px, 3vw, 32px); border-radius: --yuvarlak--; background: --kartBg--; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .modulex-yorum-kriter-puan-kart::before { content: ""; position: absolute; inset-block-start: 0; inset-inline: 0; height: 4px; background: --accent--; }
+  .modulex-yorum-kriter-puan-kart:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -30px color-mix(in srgb, --text-- 70%, transparent); }
+  .modulex-yorum-kriter-puan-tepe { display: flex; align-items: center; gap: 16px; }
+  .modulex-yorum-kriter-puan-halka { position: relative; display: grid; flex: none; place-items: center; width: 78px; height: 78px; border-radius: 50%; background-color: --cizgi--; background-image: conic-gradient(--accent-- calc(var(--o) * 360deg), transparent 0); transition: transform 0.4s ease; }
+  .modulex-yorum-kriter-puan-kart:hover .modulex-yorum-kriter-puan-halka { transform: rotate(-8deg); }
+  .modulex-yorum-kriter-puan-halka::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; background: --kartBg--; }
+  .modulex-yorum-kriter-puan-hdeger { position: relative; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .modulex-yorum-kriter-puan-kim { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px 12px; min-width: 0; }
+  .modulex-yorum-kriter-puan-tarih { grid-column: 2; color: --muted--; font-size: 0.82rem; }
+  .modulex-yorum-kriter-puan-kriterler { display: grid; gap: 10px; padding-block: 16px; border-block: 1px dashed --cizgi--; }
+  .modulex-yorum-kriter-puan-kriter { display: grid; grid-template-columns: minmax(0, 9.5em) minmax(0, 1fr); align-items: center; gap: 12px; }
+  .modulex-yorum-kriter-puan-kad { color: --muted--; font-size: 0.88rem; font-weight: 600; }
+  .modulex-yorum-kriter-puan-kdeger { display: grid; grid-template-columns: minmax(0, 1fr) 2.4em; align-items: center; gap: 10px; }
+  .modulex-yorum-kriter-puan-cubuk { height: 8px; overflow: hidden; border-radius: 99px; background: --cizgi--; }
+  .modulex-yorum-kriter-puan-cubuk span { display: block; width: var(--d); height: 100%; border-radius: inherit; background: --accent--; transition: width 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i) * 0.08s + 0.1s); }
+  .modulex-yorum-kriter-puan--hazir:not(.modulex-yorum-kriter-puan--gor) .modulex-yorum-kriter-puan-cubuk span { width: 0; }
+  .modulex-yorum-kriter-puan-ksayi { font-size: 0.88rem; font-weight: 700; font-variant-numeric: tabular-nums; text-align: end; }
+  .modulex-yorum-kriter-puan-kbaslik { font-size: 1.08rem; font-weight: 750; line-height: 1.35; }
+  .modulex-yorum-kriter-puan-alinti { color: --text--; line-height: 1.7; }
+  .modulex-yorum-kriter-puan-avatar { width: 40px; height: 40px; font-size: 0.8rem; }
+  @media (max-width: 768px) {
+    .modulex-yorum-kriter-puan-halka { width: 66px; height: 66px; }
+    .modulex-yorum-kriter-puan-hdeger { font-size: 1.2rem; }
+    .modulex-yorum-kriter-puan-kriter { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-kriter-puan :is(.modulex-yorum-kriter-puan-baslik, .modulex-yorum-kriter-puan-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-kriter-puan-baslik { line-height: 1.35; }
+  @media (max-width: 1024px) {
+    .modulex-yorum-kriter-puan-bas { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-yorum-kriter-puan { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-yorum-kriter-puan *, .modulex-yorum-kriter-puan *::before, .modulex-yorum-kriter-puan *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-yorum-kriter-puan";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const gozlem = (s, P, az) => {
+        const gor = () => s.classList.add(P + "--gor");
+        s.classList.add(P + "--hazir");
+        if (az || !("IntersectionObserver" in window)) { gor(); return; }
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { gor(); io.disconnect(); } });
+        }, { threshold: 0.15 });
+        io.observe(s);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      gozlem(s, P, az);
+    });
+  })();
+</script>

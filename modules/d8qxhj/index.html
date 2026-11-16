@@ -1,0 +1,168 @@
+<header class="modulex-ust-secici{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-ust-secici-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</header>
+
+<style>
+  /* ust-secici — Menü düğmesi soyut üç çizgi değil, bulunulan yeri söyleyen bir seçici (form seçim kutusu dili): kullanıcı hem nerede olduğunu görür hem tek dokunuşla başka sayfaya geçer. */
+  .modulex-ust-secici { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-ust-secici *, .modulex-ust-secici *::before, .modulex-ust-secici *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-ust-secici :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-ust-secici :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-ust-secici :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-ust-secici :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-ust-secici img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-ust-secici) img { height: auto; }
+  .modulex-ust-secici [hidden] { display: none !important; }
+  .modulex-ust-secici :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-ust-secici :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-ust-secici-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-ust-secici-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-ust-secici--bassiz .modulex-ust-secici-bas { display: none; }
+  .modulex-ust-secici-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-ust-secici-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-ust-secici-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-ust-secici-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-ust-secici-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-ust-secici-dugme:hover { transform: translateY(-2px); }
+  .modulex-ust-secici-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-ust-secici-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-ust-secici-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-ust-secici { position: relative; z-index: 900; }
+  .modulex-ust-secici-logo { display: inline-flex; flex: 0 1 auto; min-width: 0; align-items: center; color: inherit; text-decoration: none; }
+  /* dar ekranda geniş logo/uzun ad çubuğu taşırmasın: logo daralır (img max-width 100%), ad sarar */
+  .modulex-ust-secici-logo img { width: auto; max-height: --logoH--; }
+  .modulex-ust-secici-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-ust-secici-oge { position: relative; display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-weight: 600; text-decoration: none; transition: color 0.2s ease, background 0.2s ease; }
+  .modulex-ust-secici-oge:hover, .modulex-ust-secici-oge[aria-current="page"] { color: --accentInk--; }
+  .modulex-ust-secici-cta { display: inline-flex; flex: none; align-items: center; gap: 6px; min-height: 44px; padding: 8px 18px; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .modulex-ust-secici-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -12px --accent--; }
+  .modulex-ust-secici-cta .material-symbols-outlined, .modulex-ust-secici-tel .material-symbols-outlined, .modulex-ust-secici-posta .material-symbols-outlined { font-size: 18px; }
+  .modulex-ust-secici-tel, .modulex-ust-secici-posta { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; white-space: nowrap; }
+  .modulex-ust-secici-tel:hover, .modulex-ust-secici-posta:hover { color: --accentInk--; }
+  .modulex-ust-secici-dil:empty { display: none; }
+  .modulex-ust-secici-ac { display: none; align-items: center; gap: 10px; min-width: 46px; min-height: 46px; padding: 0 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: inherit; font: inherit; font-weight: 700; }
+  .modulex-ust-secici-ac-ikon { display: grid; gap: 4px; width: 20px; }
+  .modulex-ust-secici-ac-ikon span { display: block; height: 2px; border-radius: 2px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .modulex-ust-secici--acik .modulex-ust-secici-ac-ikon span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .modulex-ust-secici--acik .modulex-ust-secici-ac-ikon span:nth-child(2) { opacity: 0; }
+  .modulex-ust-secici--acik .modulex-ust-secici-ac-ikon span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .modulex-ust-secici-kapat { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid --cizgi--; border-radius: 50%; background: transparent; color: inherit; }
+  .modulex-ust-secici-perde { position: fixed; inset: 0; z-index: 1; background: color-mix(in srgb, --text-- 45%, transparent); animation: modulex-ust-secici-sol 0.3s ease both; }
+  @keyframes modulex-ust-secici-sol { from { opacity: 0; } to { opacity: 1; } }
+
+  .modulex-ust-secici-panel { display: grid; gap: 14px; }
+  @media (max-width: 1024px) {
+    .modulex-ust-secici--js .modulex-ust-secici-nav, .modulex-ust-secici--js .modulex-ust-secici-genis { display: none; }
+    .modulex-ust-secici--js .modulex-ust-secici-ac { display: inline-flex; }
+    .modulex-ust-secici-panel { position: absolute; inset-inline: 0; inset-block-start: 100%; padding: 16px 20px 24px; border-block-end: 1px solid --cizgi--; background: --bg--; box-shadow: 0 24px 40px -28px color-mix(in srgb, --text-- 55%, transparent); animation: modulex-ust-secici-in 0.3s ease both; }
+    .modulex-ust-secici-pliste { display: grid; }
+    .modulex-ust-secici-pliste .modulex-ust-secici-oge { width: 100%; min-height: 50px; border-block-end: 1px solid --cizgi--; font-size: 1.05rem; }
+    .modulex-ust-secici-palt { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  }
+  @media (min-width: 1025px) {
+    .modulex-ust-secici-panel { display: none !important; }
+  }
+  @keyframes modulex-ust-secici-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+  .modulex-ust-secici-zemin { display: flex; align-items: center; justify-content: space-between; gap: 12px 26px; padding-block: 14px; }
+  .modulex-ust-secici-cliste { display: flex; flex-wrap: wrap; align-items: center; }
+  .modulex-ust-secici-cliste > li + li { border-inline-start: 1px solid --cizgi--; }
+  .modulex-ust-secici-coge { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding-inline: 16px; color: inherit; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-ust-secici-coge::before { content: ""; width: 0; height: 0; border-block: 5px solid transparent; border-inline-start: 7px solid --accent--; opacity: 0; transform: scale(0.4); transition: opacity 0.2s ease, transform 0.25s ease; }
+  .modulex-ust-secici-coge:hover { color: --accentInk--; }
+  .modulex-ust-secici-coge:hover::before, .modulex-ust-secici-coge[aria-current="page"]::before { opacity: 1; transform: none; }
+  .modulex-ust-secici-coge[aria-current="page"] { font-weight: 800; }
+  .modulex-ust-secici-genis { display: flex; align-items: center; gap: 12px; }
+  .modulex-ust-secici .modulex-ust-secici-secim { flex: 1 1 auto; justify-content: space-between; gap: 12px; max-width: 360px; min-height: 54px; padding-block: 6px; padding-inline: 16px 10px; border-radius: 14px; background-color: --bg--; text-align: start; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  .modulex-ust-secici .modulex-ust-secici-secim:hover, .modulex-ust-secici--acik .modulex-ust-secici-secim { border-color: --accent--; box-shadow: 0 0 0 3px color-mix(in srgb, --accent-- 18%, transparent); }
+  .modulex-ust-secici-secyazi { display: grid; min-width: 0; line-height: 1.2; }
+  .modulex-ust-secici-secbas { color: --muted--; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .modulex-ust-secici-secad { overflow: hidden; font-size: 1rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+  .modulex-ust-secici-secok { flex: none; transition: transform 0.3s ease; }
+  .modulex-ust-secici--acik .modulex-ust-secici-secok { transform: rotate(180deg); }
+  .modulex-ust-secici-secenekler { display: grid; gap: 4px; }
+  .modulex-ust-secici-secenek { justify-content: space-between; width: 100%; min-height: 50px; padding-inline: 14px; border-radius: 12px; }
+  .modulex-ust-secici-secenek:hover { background-color: color-mix(in srgb, --text-- 6%, transparent); }
+  .modulex-ust-secici-secenek[aria-current="page"] { background-color: color-mix(in srgb, --accent-- 12%, --bg--); }
+  .modulex-ust-secici-secenek[aria-current="page"]::after { content: ""; flex: none; width: 7px; height: 13px; margin-inline-end: 4px; border-block-end: 2.5px solid currentColor; border-inline-end: 2.5px solid currentColor; transform: rotate(45deg) translateY(-2px); }
+  [dir="rtl"] .modulex-ust-secici-secenek[aria-current="page"]::after { transform: rotate(-45deg) translateY(-2px); }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-secici-secbas { letter-spacing: 0; }
+  @media (max-width: 1024px) {
+    .modulex-ust-secici:not(.modulex-ust-secici--js) .modulex-ust-secici-zemin { flex-wrap: wrap; }
+  }
+  @media (max-width: 768px) {
+    .modulex-ust-secici .modulex-ust-secici-secim { max-width: 64%; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-secici :is(.modulex-ust-secici-baslik, .modulex-ust-secici-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-secici-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-ust-secici { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-ust-secici *, .modulex-ust-secici *::before, .modulex-ust-secici *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-ust-secici";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const cekmece = (s, P) => {
+          const ac = s.querySelector("." + P + "-ac");
+          const panel = ac ? document.getElementById(ac.getAttribute("aria-controls")) : null;
+          if (!ac || !panel) return;
+          s.classList.add(P + "--js");
+          const perde = s.querySelector("." + P + "-perde");
+          const modal = panel.getAttribute("aria-modal") === "true";
+          const kok = document.documentElement;
+          const kapa = (odak) => {
+            if (panel.hidden) return;
+            panel.hidden = true;
+            if (perde) perde.hidden = true;
+            ac.setAttribute("aria-expanded", "false");
+            s.classList.remove(P + "--acik");
+            if (modal) kok.style.overflow = "";
+            if (odak) ac.focus();
+          };
+          const aci = () => {
+            panel.hidden = false;
+            if (perde) perde.hidden = false;
+            ac.setAttribute("aria-expanded", "true");
+            s.classList.add(P + "--acik");
+            if (modal) kok.style.overflow = "hidden";
+            const ilk = panel.querySelector("a[href], button");
+            if (ilk) ilk.focus();
+          };
+          ac.addEventListener("click", () => (panel.hidden ? aci() : kapa(true)));
+          panel.addEventListener("click", (e) => {
+            if (e.target.closest("." + P + "-kapat")) kapa(true);
+            else if (e.target.closest("a[href]")) kapa(false);
+          });
+          if (perde) perde.addEventListener("click", () => kapa(true));
+          document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) kapa(true); });
+          if (modal) {
+            panel.addEventListener("keydown", (e) => {
+              if (e.key !== "Tab") return;
+              const o = [...panel.querySelectorAll("a[href], button:not([disabled])")].filter((x) => x.offsetParent !== null);
+              if (!o.length) return;
+              if (e.shiftKey && document.activeElement === o[0]) { e.preventDefault(); o[o.length - 1].focus(); }
+              else if (!e.shiftKey && document.activeElement === o[o.length - 1]) { e.preventDefault(); o[0].focus(); }
+            });
+          }
+          const g = Number(ac.dataset.genis);
+          if (g && window.matchMedia) window.matchMedia(`(min-width: ${g}px)`).addEventListener("change", (m) => { if (m.matches) kapa(false); });
+        };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      cekmece(s, P, az);
+    });
+  })();
+</script>
