@@ -1,0 +1,40 @@
+{
+  "id": "f8m4hhjd34",
+  "name": {
+    "tr": "Ürünler",
+    "en": "Products",
+    "ar": "المنتجات"
+  },
+  "description": {
+    "tr": "Kavanoz rafı, gram tartısı ve PDF fiyat listesi (kurgusal).",
+    "en": "The jar shelf, gram scale and PDF price list (fictional).",
+    "ar": "رف المرطبانات وميزان الغرام وقائمة أسعار PDF (افتراضية)."
+  },
+  "keyword": {
+    "tr": "kuruyemiş, fiyat",
+    "en": "nuts, prices",
+    "ar": "مكسرات، أسعار"
+  },
+  "path": "hizmetler",
+  "icon": "kitchen",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "td19ix",
+      "8ir5g3"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Ürünler",
+    "en": "Products",
+    "ar": "المنتجات"
+  },
+  "date": "2026-11-16T18:07:47.800Z",
+  "update": "2026-11-16T18:11:50.291Z"
+}

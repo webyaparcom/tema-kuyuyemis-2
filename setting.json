@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Kavurga: Ankara Ulus’ta günde üç kez kavrulan kuruyemiş ve kuru meyve. Kavanozdan seçin, gramını tartın, kg fiyatını görün; PDF fiyat listesi. Demo site; içerik kurgusaldır.",
+    "en": "Kavurga: nuts and dried fruit roasted three times a day in Ulus, Ankara. Pick from the jars, weigh by the gram, see the price per kg; PDF price list. Demo site; content is fictional.",
+    "ar": "كافورغا: مكسرات وفواكه مجففة تُحمَّص ثلاث مرات يوميًا في أولوس بأنقرة. اختر من المرطبانات وزِن بالغرام واطّلع على سعر الكيلو؛ قائمة أسعار PDF. موقع تجريبي؛ المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "kuruyemiş, Antep fıstığı, fındık, leblebi, kuru kayısı, Ankara",
+    "en": "nuts, pistachio, hazelnut, roasted chickpeas, dried apricot, Ankara",
+    "ar": "مكسرات، فستق حلبي، بندق، حمص محمّص، مشمش مجفف، أنقرة"
+  },
+  "category": "Kurumsal",
+  "name": "Kavurga",
+  "domain": "kuyuyemis-2.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "rubik",
+    "heading": "barlow-condensed",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#4F7A28",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "7px",
+    "--mx-radius-md": "12px",
+    "--mx-radius-lg": "17px",
+    "--mx-radius-xl": "23px"
+  },
+  "icon": "icon.png"
+}
