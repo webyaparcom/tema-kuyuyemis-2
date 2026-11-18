@@ -3,17 +3,23 @@
   "name": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "description": {
     "tr": "Misyonumuz",
     "en": "Our mission",
-    "ar": "مهمتنا"
+    "ar": "مهمتنا",
+    "de": "Unsere Mission",
+    "ru": "Наша миссия"
   },
   "keyword": {
     "tr": "Misyon",
     "en": "mission, our mission, corporate responsibility",
-    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية"
+    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "path": "misyon",
   "icon": "flag",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Misyonumuz</h2>\n<p>Kuruyemişi her gün taze kavurmak ve gramına kadar dürüst tartmak.</p>",
     "en": "<h2>Our mission</h2>\n<p>To roast nuts fresh every day and weigh them honestly to the gram.</p>",
-    "ar": "<h2>مهمتنا</h2>\n<p>أن نحمّص المكسرات طازجة كل يوم ونزنها بأمانة حتى الغرام.</p>"
+    "ar": "<h2>مهمتنا</h2>\n<p>أن نحمّص المكسرات طازجة كل يوم ونزنها بأمانة حتى الغرام.</p>",
+    "de": "<h2>Unsere Mission</h2>\n<p>Nüsse täglich frisch rösten und gramgenau ehrlich wiegen.</p>",
+    "ru": "<h2>Наша миссия</h2>\n<p>Обжигать орехи свежими каждый день и честно взвешивать до грамма.</p>"
   },
   "title": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "date": "2026-11-16T18:07:47.654Z",
   "update": "2026-11-16T18:11:50.306Z",

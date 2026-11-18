@@ -4,12 +4,16 @@
   "description": {
     "tr": "Kavurga: Ankara Ulus’ta günde üç kez kavrulan kuruyemiş ve kuru meyve. Kavanozdan seçin, gramını tartın, kg fiyatını görün; PDF fiyat listesi. Demo site; içerik kurgusaldır.",
     "en": "Kavurga: nuts and dried fruit roasted three times a day in Ulus, Ankara. Pick from the jars, weigh by the gram, see the price per kg; PDF price list. Demo site; content is fictional.",
-    "ar": "كافورغا: مكسرات وفواكه مجففة تُحمَّص ثلاث مرات يوميًا في أولوس بأنقرة. اختر من المرطبانات وزِن بالغرام واطّلع على سعر الكيلو؛ قائمة أسعار PDF. موقع تجريبي؛ المحتوى افتراضي."
+    "ar": "كافورغا: مكسرات وفواكه مجففة تُحمَّص ثلاث مرات يوميًا في أولوس بأنقرة. اختر من المرطبانات وزِن بالغرام واطّلع على سعر الكيلو؛ قائمة أسعار PDF. موقع تجريبي؛ المحتوى افتراضي.",
+    "de": "Kavurga: dreimal täglich frisch geröstete Nüsse und Trockenfrüchte in Ankara Ulus. Aus dem Glas wählen, Gramm abwiegen, Kilopreis sehen; PDF-Preisliste. Demo-Website; der Inhalt ist fiktiv.",
+    "ru": "Kavurga: орехи и сухофрукты, обжариваемые три раза в день, в Анкаре, Улус. Выбирайте из банки, взвешивайте граммы, смотрите цену за кг; прайс-лист в PDF. Демо-сайт; содержание вымышлено."
   },
   "keyword": {
     "tr": "kuruyemiş, Antep fıstığı, fındık, leblebi, kuru kayısı, Ankara",
     "en": "nuts, pistachio, hazelnut, roasted chickpeas, dried apricot, Ankara",
-    "ar": "مكسرات، فستق حلبي، بندق، حمص محمّص، مشمش مجفف، أنقرة"
+    "ar": "مكسرات، فستق حلبي، بندق، حمص محمّص، مشمش مجفف، أنقرة",
+    "de": "Nüsse, Pistazien, Haselnüsse, Leblebi, getrocknete Aprikosen, Ankara",
+    "ru": "орехи, фисташки, фундук, жареный нут, сушёные абрикосы, Анкара"
   },
   "category": "Kurumsal",
   "name": "Kavurga",
@@ -18,15 +22,27 @@
     "tr": true,
     "en": true,
     "ar": true,
-    "de": false,
-    "ru": false,
+    "de": true,
+    "ru": true,
     "es": false,
     "fr": false,
     "it": false,
     "ja": false,
     "zh": false,
     "ko": false,
-    "pt": false
+    "pt": false,
+    "fa": false,
+    "he": false,
+    "ur": false,
+    "nl": false,
+    "pl": false,
+    "uk": false,
+    "az": false,
+    "ka": false,
+    "el": false,
+    "bg": false,
+    "ro": false,
+    "hi": false
   },
   "logo": "logo.png",
   "multi": false,

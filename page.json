@@ -5,12 +5,16 @@
       "name": {
         "tr": "Ürünler",
         "en": "Products",
-        "ar": "المنتجات"
+        "ar": "المنتجات",
+        "de": "Produkte",
+        "ru": "Продукты"
       },
       "description": {
         "tr": "Kavanoz rafı, gram tartısı ve PDF fiyat listesi (kurgusal).",
         "en": "The jar shelf, gram scale and PDF price list (fictional).",
-        "ar": "رف المرطبانات وميزان الغرام وقائمة أسعار PDF (افتراضية)."
+        "ar": "رف المرطبانات وميزان الغرام وقائمة أسعار PDF (افتراضية).",
+        "de": "Vorratsgläser-Regal, Grammwaage und PDF-Preisliste (fiktiv).",
+        "ru": "Полка с банками, весы для грамм и прайс-лист в PDF (вымышленный)."
       },
       "path": "hizmetler",
       "icon": "kitchen",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Köken",
         "en": "Origin",
-        "ar": "المنشأ"
+        "ar": "المنشأ",
+        "de": "Herkunft",
+        "ru": "Происхождение"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -51,7 +57,9 @@
       "description": {
         "tr": "Dükkânın künyesi ve raftaki yöreler.",
         "en": "The shop in numbers and the regions on the shelf.",
-        "ar": "المتجر بالأرقام والمناطق على الرف."
+        "ar": "المتجر بالأرقام والمناطق على الرف.",
+        "de": "Die Zahlen des Ladens und die Regionen im Regal.",
+        "ru": "Показатели магазина и регионы на полке."
       }
     },
     {
@@ -59,12 +67,16 @@
       "name": {
         "tr": "Yorumlar",
         "en": "Reviews",
-        "ar": "التقييمات"
+        "ar": "التقييمات",
+        "de": "Bewertungen",
+        "ru": "Отзывы"
       },
       "description": {
         "tr": "Kriter puanlı müşteri yorumları (kurgusal).",
         "en": "Customer reviews scored by criteria (fictional).",
-        "ar": "تقييمات عملاء حسب المعايير (افتراضية)."
+        "ar": "تقييمات عملاء حسب المعايير (افتراضية).",
+        "de": "Kundenbewertungen nach Kriterien bewertet (fiktiv).",
+        "ru": "Отзывы клиентов с оценкой по критериям (вымышленные)."
       },
       "path": "referanslar",
       "icon": "stars",
@@ -84,7 +96,9 @@
       "name": {
         "tr": "İletişim",
         "en": "Contact",
-        "ar": "اتصل بنا"
+        "ar": "اتصل بنا",
+        "de": "Kontakt",
+        "ru": "Контакты"
       },
       "status": "play",
       "id": "iletisim",
@@ -105,7 +119,9 @@
       "description": {
         "tr": "Adres, telefon ve çalışma saatleri.",
         "en": "Address, phone and opening hours.",
-        "ar": "العنوان والهاتف وساعات العمل."
+        "ar": "العنوان والهاتف وساعات العمل.",
+        "de": "Adresse, Telefon und Öffnungszeiten.",
+        "ru": "Адрес, телефон и часы работы."
       }
     }
   ],
