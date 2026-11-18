@@ -2,7 +2,9 @@
   "name": {
     "tr": "Köken",
     "en": "Origin",
-    "ar": "المنشأ"
+    "ar": "المنشأ",
+    "de": "Herkunft",
+    "ru": "Происхождение"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Dükkânın künyesi ve raftaki yöreler.",
     "en": "The shop in numbers and the regions on the shelf.",
-    "ar": "المتجر بالأرقام والمناطق على الرف."
+    "ar": "المتجر بالأرقام والمناطق على الرف.",
+    "de": "Die Zahlen des Ladens und die Regionen im Regal.",
+    "ru": "Показатели магазина и регионы на полке."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Köken",
     "en": "Origin",
-    "ar": "المنشأ"
+    "ar": "المنشأ",
+    "de": "Herkunft",
+    "ru": "Происхождение"
   },
   "keyword": {
     "tr": "hakkımızda",
     "en": "about",
-    "ar": "من نحن"
+    "ar": "من نحن",
+    "de": "Über uns",
+    "ru": "О нас"
   },
   "text": {},
   "update": "2026-11-16T18:11:50.295Z",

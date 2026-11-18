@@ -3,17 +3,23 @@
   "name": {
     "tr": "Yorumlar",
     "en": "Reviews",
-    "ar": "التقييمات"
+    "ar": "التقييمات",
+    "de": "Bewertungen",
+    "ru": "Отзывы"
   },
   "description": {
     "tr": "Kriter puanlı müşteri yorumları (kurgusal).",
     "en": "Customer reviews scored by criteria (fictional).",
-    "ar": "تقييمات عملاء حسب المعايير (افتراضية)."
+    "ar": "تقييمات عملاء حسب المعايير (افتراضية).",
+    "de": "Kundenbewertungen nach Kriterien bewertet (fiktiv).",
+    "ru": "Отзывы клиентов с оценкой по критериям (вымышленные)."
   },
   "keyword": {
     "tr": "referans, müşteri yorumu",
     "en": "reference, review",
-    "ar": "مرجع، تقييم"
+    "ar": "مرجع، تقييم",
+    "de": "Referenz, Kundenbewertung",
+    "ru": "рекомендация, отзыв клиента"
   },
   "path": "referanslar",
   "icon": "stars",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Yorumlar",
     "en": "Reviews",
-    "ar": "التقييمات"
+    "ar": "التقييمات",
+    "de": "Bewertungen",
+    "ru": "Отзывы"
   },
   "date": "2026-11-16T18:07:47.813Z",
   "update": "2026-11-16T18:11:50.298Z"

@@ -3,17 +3,23 @@
   "name": {
     "tr": "Ürünler",
     "en": "Products",
-    "ar": "المنتجات"
+    "ar": "المنتجات",
+    "de": "Produkte",
+    "ru": "Продукты"
   },
   "description": {
     "tr": "Kavanoz rafı, gram tartısı ve PDF fiyat listesi (kurgusal).",
     "en": "The jar shelf, gram scale and PDF price list (fictional).",
-    "ar": "رف المرطبانات وميزان الغرام وقائمة أسعار PDF (افتراضية)."
+    "ar": "رف المرطبانات وميزان الغرام وقائمة أسعار PDF (افتراضية).",
+    "de": "Vorratsgläser-Regal, Grammwaage und PDF-Preisliste (fiktiv).",
+    "ru": "Полка с банками, весы для грамм и прайс-лист в PDF (вымышленный)."
   },
   "keyword": {
     "tr": "kuruyemiş, fiyat",
     "en": "nuts, prices",
-    "ar": "مكسرات، أسعار"
+    "ar": "مكسرات، أسعار",
+    "de": "Nüsse, Preis",
+    "ru": "орехи, цена"
   },
   "path": "hizmetler",
   "icon": "kitchen",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Ürünler",
     "en": "Products",
-    "ar": "المنتجات"
+    "ar": "المنتجات",
+    "de": "Produkte",
+    "ru": "Продукты"
   },
   "date": "2026-11-16T18:07:47.800Z",
   "update": "2026-11-16T18:11:50.291Z"
